@@ -2,6 +2,10 @@ var photographs = instagramAPI.data.filter(function (asset) {
   return asset.type === 'image';
 }).slice(0, 16);
 
+var videos = instagramAPI.data.filter(function (asset) {
+  return asset.type === 'video';
+});
+
 var photographsDiv = document.getElementById('photographs');
 
 function createImageElementFromPhotograph(photograph) {

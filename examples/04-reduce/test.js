@@ -8,11 +8,11 @@ describe('totalLikes', function () {
 
 describe('popularTags', function () {
 
-  it.skip('is an object with keys', function () {
+  it('is an object with keys', function () {
     assert(!!Object.keys(popularTags).length);
   });
 
-  it.skip('has the correct number of tags', function () {
+  it('has the correct number of tags', function () {
     assert.equal(Object.keys(popularTags).length, 229);
   });
 
