@@ -3,8 +3,8 @@
 // `likes.count`. What is the total number of likes for
 // all of the photos/videos fetch from the API?
 
-var totalLikes = instagramAPI.data.reduce(function (total, photo) {
-    return total + photo.likes.count;
+var totalLikes = instagramAPI.data.reduce(function (total, element) {
+    return total + element.likes.count;
 }, 0);
 
 // TODO: Given an API response stored in `instagramAPI.data`,
@@ -13,7 +13,14 @@ var totalLikes = instagramAPI.data.reduce(function (total, photo) {
 var getTags = instagramAPI.data
 
 var popularTags = instagramAPI.data.reduce(function (total, object) {
-    return total
-});
+    object.tags.forEach(function(tag){
+        if (!total[tag]) {
+            total[tag] = 1;
+        } else {
+            total[tag]++
+        }
+    });
+    return total;
+}, {});
 
-console.log(popularTags)
+console.log(popularTags);

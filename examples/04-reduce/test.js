@@ -16,7 +16,7 @@ describe('popularTags', function () {
     assert.equal(Object.keys(popularTags).length, 229);
   });
 
-  it.skip('has the correct count for the tags', function () {
+  it('has the correct count for the tags', function () {
     assert.equal(popularTags.love, 6);
     assert.equal(popularTags.family, 1);
   });
